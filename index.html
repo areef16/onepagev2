@@ -101,7 +101,7 @@
                     </div>
                     <h3>Grid-Tie (On-Grid)</h3>
                     <p>Terhubung ke jaringan PLN, cocok untuk area berlistrik stabil dengan biaya operasional rendah.</p>
-                    <a href="#contact" class="btn-small">Konsultasi Sekarang</a>
+                    <a href="https://wa.me/628783728688?text=Saya%20tertarik%20dengan%20layanan%20Grid-Tie%20(On-Grid)%20Ufuk%20Hijau" class="btn-small" target="_blank">Konsultasi Sekarang</a>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
@@ -109,7 +109,7 @@
                     </div>
                     <h3>Off-Grid</h3>
                     <p>Sistem mandiri dengan baterai penyimpanan, ideal untuk lokasi terpencil atau kebutuhan kritis.</p>
-                    <a href="#contact" class="btn-small">Konsultasi Sekarang</a>
+                    <a href="https://wa.me/628783728688?text=Saya%20tertarik%20dengan%20layanan%20Off-Grid%20Ufuk%20Hijau" class="btn-small" target="_blank">Konsultasi Sekarang</a>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
@@ -117,7 +117,7 @@
                     </div>
                     <h3>Hybrid</h3>
                     <p>Kombinasi on-grid dan off-grid dengan backup daya saat pemadaman.</p>
-                    <a href="#contact" class="btn-small">Konsultasi Sekarang</a>
+                    <a href="https://wa.me/628783728688?text=Saya%20tertarik%20dengan%20layanan%20Hybrid%20Ufuk%20Hijau" class="btn-small" target="_blank">Konsultasi Sekarang</a>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
@@ -125,9 +125,8 @@
                     </div>
                     <h3>Sistem Penyimpanan Energi</h3>
                     <p>Solusi penyimpanan energi canggih untuk memaksimalkan penggunaan energi surya dan mengurangi ketergantungan pada grid.</p>
-                    <a href="#contact" class="btn-small">Konsultasi Sekarang</a>
+                    <a href="https://wa.me/628783728688?text=Saya%20tertarik%20dengan%20layanan%20Sistem%20Penyimpanan%20Energi%20Ufuk%20Hijau" class="btn-small" target="_blank">Konsultasi Sekarang</a>
                 </div>
-                
             </div>
         </div>
     </section>
@@ -137,7 +136,6 @@
         <div class="container">
             <h2>Portofolio Kami</h2>
             <div class="portfolio-grid">
-                <!-- Item 1 -->
                 <div class="portfolio-item">
                     <div class="portfolio-image">
                         <img src="images/portfolio1.jpg" alt="Proyek PLTS Rumah Tinggal" loading="lazy">
@@ -147,8 +145,6 @@
                         <p>Kapasitas 5 kWp - Surakarta</p>
                     </div>
                 </div>
-                
-                <!-- Item 2 -->
                 <div class="portfolio-item">
                     <div class="portfolio-image">
                         <img src="images/portfolio2.jpg" alt="Proyek PLTS Industri" loading="lazy">
@@ -158,8 +154,6 @@
                         <p>Kapasitas 50 kWp - Semarang</p>
                     </div>
                 </div>
-
-                <!-- Item 3 -->
                 <div class="portfolio-item">
                     <div class="portfolio-image">
                         <img src="images/portfolio3.jpg" alt="Proyek PLTS Komersil" loading="lazy">
@@ -173,7 +167,7 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Contact Section - Updated with Formspree ID -->
     <section id="contact" class="contact-section">
         <div class="container">
             <h2>Hubungi Kami</h2>
@@ -190,27 +184,55 @@
                         <a href="#"><i class="fab fa-linkedin"></i></a>
                         <a href="#"><i class="fab fa-youtube"></i></a>
                     </div>
+
+                    <!-- WhatsApp Quick Button -->
+                    <div class="whatsapp-quick">
+                        <a href="https://wa.me/628783728688" class="btn whatsapp-btn" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Chat Langsung
+                        </a>
+                        <p class="response-time"><i class="fas fa-bolt"></i> Respon cepat dalam 5 menit</p>
+                    </div>
                 </div>
+                
                 <div class="contact-form">
-                    <form id="contactForm">
+                    <form id="contactForm" action="https://formspree.io/f/mzzvgyog" method="POST">
                         <div class="form-group">
-                            <input type="text" id="name" placeholder="Nama Anda" required>
+                            <input type="text" name="name" placeholder="Nama Lengkap" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" id="email" placeholder="Email" required>
+                            <input type="email" name="email" placeholder="Email" required>
                         </div>
                         <div class="form-group">
-                            <input type="tel" id="phone" placeholder="Nomor Telepon">
+                            <input type="tel" name="phone" placeholder="Nomor WhatsApp/Telepon" required>
                         </div>
                         <div class="form-group">
-                            <textarea id="message" placeholder="Pesan Anda" rows="4" required></textarea>
+                            <select name="service" required>
+                                <option value="" disabled selected>Pilih Layanan</option>
+                                <option value="on-grid">Grid-Tie (On-Grid)</option>
+                                <option value="off-grid">Off-Grid</option>
+                                <option value="hybrid">Hybrid</option>
+                                <option value="storage">Sistem Penyimpanan Energi</option>
+                                <option value="other">Lainnya</option>
+                            </select>
                         </div>
-                        <button type="submit" class="btn">Kirim Pesan <i class="fas fa-paper-plane"></i></button>
+                        <div class="form-group">
+                            <textarea name="message" placeholder="Deskripsi kebutuhan proyek Anda..." rows="4" required></textarea>
+                        </div>
+                        <input type="hidden" name="_subject" value="Permintaan Konsultasi dari Website">
+                        <input type="hidden" name="_replyto">
+                        <button type="submit" class="btn">
+                            <i class="fas fa-paper-plane"></i> Kirim Permintaan
+                        </button>
                     </form>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/628783728688" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i> Konsultasi
+    </a>
 
     <!-- Footer -->
     <footer>
@@ -242,5 +264,27 @@
     </footer>
 
     <script src="js/main.js"></script>
+    
+    <!-- WhatsApp Integration Script -->
+    <script>
+        // Auto-set reply-to email
+        document.querySelector('input[name="email"]')?.addEventListener('input', function() {
+            document.querySelector('input[name="_replyto"]').value = this.value;
+        });
+        
+        // Add WhatsApp click tracking (optional)
+        document.querySelectorAll('[href*="whatsapp"]').forEach(link => {
+            link.addEventListener('click', function() {
+                if(typeof gtag !== 'undefined') {
+                    gtag('event', 'conversion', {
+                        'send_to': 'AW-XXXXXX/YYYYYYYY',
+                        'event_callback': function() {}
+                    });
+                }
+                // Fallback tracking
+                console.log('WhatsApp link clicked:', this.href);
+            });
+        });
+    </script>
 </body>
 </html>
