@@ -1,109 +1,116 @@
-// ===== MOBILE MENU =====
-function setupMobileMenu() {
-  const menuBtn = document.querySelector('.mobile-menu');
-  const nav = document.getElementById('main-nav');
-
-  if (!menuBtn || !nav) return;
-
-  const toggleMenu = () => {
-    const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
-    menuBtn.setAttribute('aria-expanded', !isExpanded);
-    nav.classList.toggle('active');
-    document.body.style.overflow = isExpanded ? '' : 'hidden';
-  };
-
-  menuBtn.addEventListener('click', toggleMenu);
-
-  // Close when clicking nav links
-  nav.addEventListener('click', (e) => {
-    if (e.target.closest('a')) toggleMenu();
-  });
-}
-
-// ===== SMOOTH SCROLL =====
-function setupSmoothScroll() {
-  document.addEventListener('click', (e) => {
-    const link = e.target.closest('a[href^="#"]');
-    if (!link || link.href === '#') return;
-
-    const targetId = link.getAttribute('href');
-    const target = document.querySelector(targetId);
-    if (!target) return;
-
-    e.preventDefault();
-    const headerHeight = document.querySelector('header').offsetHeight;
-    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
-
-    window.scrollTo({
-      top: targetPosition - headerHeight,
-      behavior: 'smooth'
-    });
-
-    history.pushState(null, null, targetId);
-  });
-}
-
-// ===== FORM HANDLING =====
-async function handleFormSubmit(form) {
-  const submitBtn = form.querySelector('button[type="submit"]');
-  const originalText = submitBtn.innerHTML;
-
-  try {
-    submitBtn.disabled = true;
-    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Mengirim...';
-
-    const response = await fetch(form.action, {
-      method: 'POST',
-      body: new FormData(form),
-      headers: { 'Accept': 'application/json' }
-    });
-
-    if (!response.ok) throw new Error('Submission failed');
-
-    form.insertAdjacentHTML('beforeend', `
-      <div class="form-success" aria-live="polite">
-        Pesan terkirim! Kami akan segera menghubungi Anda.
-      </div>
-    `);
+document.addEventListener('DOMContentLoaded', function() {
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.querySelector('.mobile-menu');
+    const mobileNav = document.querySelector('.mobile-nav');
     
-    form.reset();
-    setTimeout(() => {
-      document.querySelector('.form-success')?.remove();
-    }, 5000);
-
-  } catch (error) {
-    alert('Error: Silakan coba lagi atau hubungi kami via WhatsApp');
-  } finally {
-    submitBtn.disabled = false;
-    submitBtn.innerHTML = originalText;
-  }
-}
-
-// ===== INITIALIZATION =====
-document.addEventListener('DOMContentLoaded', () => {
-  setupMobileMenu();
-  setupSmoothScroll();
-
-  // Form submission
-  const contactForm = document.getElementById('contactForm');
-  if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      handleFormSubmit(contactForm);
+    mobileMenuBtn.addEventListener('click', function() {
+        mobileNav.classList.toggle('active');
+        this.classList.toggle('fa-times');
     });
-  }
 
-  // Set current year
-  document.getElementById('current-year').textContent = new Date().getFullYear();
+    // Close mobile menu when clicking a link
+    document.querySelectorAll('.mobile-nav a').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileNav.classList.remove('active');
+            mobileMenuBtn.classList.remove('fa-times');
+        });
+    });
+
+    // Header Scroll Effect
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+
+    // Smooth Scrolling for Anchor Links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                // Close mobile menu if open
+                if (mobileNav.classList.contains('active')) {
+                    mobileNav.classList.remove('active');
+                    mobileMenuBtn.classList.remove('fa-times');
+                }
+                
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // Form Submission
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const message = document.getElementById('message').value;
+            
+            // Here you would typically send the form data to a server
+            console.log('Form submitted:', { 
+                name: name,
+                email: email,
+                phone: phone,
+                message: message 
+            });
+            
+            // Show success message
+            alert('Terima kasih! Pesan Anda telah terkirim. Kami akan segera menghubungi Anda.');
+            
+            // Reset form
+            contactForm.reset();
+        });
+    }
+
+    // Animate Elements on Scroll
+    const animateOnScroll = function() {
+        const elements = document.querySelectorAll(
+            '.service-card, .vision, .mission, ' +
+            '.portfolio-item, .contact-info, ' +
+            '.contact-form, .about-content'
+        );
+        
+        elements.forEach(element => {
+            const elementPosition = element.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+            
+            if (elementPosition < windowHeight - 100) {
+                element.style.opacity = '1';
+                element.style.transform = 'translateY(0)';
+            }
+        });
+    };
+
+    // Set initial state for animated elements
+    document.querySelectorAll(
+        '.service-card, .vision, .mission, ' +
+        '.portfolio-item, .contact-info, ' +
+        '.contact-form, .about-content'
+    ).forEach(element => {
+        element.style.opacity = '0';
+        element.style.transform = 'translateY(20px)';
+        element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    });
+
+    // Run once on load
+    animateOnScroll();
+
+    // Run on scroll
+    window.addEventListener('scroll', animateOnScroll);
 });
-
-// ===== SCROLL HEADER EFFECT =====
-let lastScroll = 0;
-window.addEventListener('scroll', () => {
-  const header = document.getElementById('header');
-  if (!header) return;
-
-  const currentScroll = window.pageYOffset;
-  header.classList.toggle('scrolled', currentScroll > 50);
-  lastScroll = currentScroll;
-}, { passive: true });
