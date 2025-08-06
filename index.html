@@ -4,31 +4,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ufuk Hijau - Solusi Energi Surya Terbaik di Indonesia</title>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/css/lightgallery.min.css">
+    <style>
+        /* Contact Section Styles */
+        .contact-section {
+            padding: 4rem 0;
+            background: #f9f9f9;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .contact-info {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .contact-info-inner {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-detail {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-detail i {
+            color: #4CAF50;
+            margin-right: 1rem;
+            margin-top: 3px;
+            font-size: 1.1rem;
+        }
+
+        .contact-detail p {
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .social-title {
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
     <header id="header">
         <div class="container">
-            <div class="logo">
-    <img src="images/logo-ufukhijau.png" alt="Logo Ufuk Hijau" width="520">
-</div>
-            <div class="nav-wrapper">
-            <nav class="desktop-nav">
-                <ul>
-                    <li><a href="#home">Beranda</a></li>
-                    <li><a href="#about">Tentang</a></li>
-                    <li><a href="#services">Layanan</a></li>
-                    <li><a href="#portfolio">Portofolio</a></li>
-                    <li><a href="#contact">Kontak</a></li>
-                </ul>
-            </nav>
-            <div class="mobile-menu">
-                <i class="fas fa-bars"></i>
+            <div class="header-wrapper">
+                <div class="logo">
+                    <img src="images/logo-ufukhijau.png" alt="Logo Ufuk Hijau" width="300" height="auto">
+                </div>
+                <div class="nav-wrapper">
+                    <nav class="desktop-nav">
+                        <ul>
+                            <li><a href="#home">Beranda</a></li>
+                            <li><a href="#about">Tentang</a></li>
+                            <li><a href="#services">Layanan</a></li>
+                            <li><a href="#portfolio">Portofolio</a></li>
+                            <li><a href="#contact">Kontak</a></li>
+                        </ul>
+                    </nav>
+                    <div class="mobile-menu">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </div>
             </div>
-        </div>
         </div>
         <nav class="mobile-nav">
             <ul>
@@ -99,7 +158,7 @@
                     </div>
                     <h3>Grid-Tie (On-Grid)</h3>
                     <p>Terhubung ke jaringan PLN, cocok untuk area berlistrik stabil dengan biaya operasional rendah.</p>
-                    <a href="#contact" class="btn-small">Konsultasi Sekarang</a>
+                    <a href="https://wa.me/6287837128688?text=Saya%20tertarik%20dengan%20layanan%20Grid-Tie%20(On-Grid)%20Ufuk%20Hijau" class="btn-small" target="_blank">Konsultasi Sekarang</a>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
@@ -107,7 +166,7 @@
                     </div>
                     <h3>Off-Grid</h3>
                     <p>Sistem mandiri dengan baterai penyimpanan, ideal untuk lokasi terpencil atau kebutuhan kritis.</p>
-                    <a href="#contact" class="btn-small">Konsultasi Sekarang</a>
+                    <a href="https://wa.me/6287837128688?text=Saya%20tertarik%20dengan%20layanan%20Off-Grid%20Ufuk%20Hijau" class="btn-small" target="_blank">Konsultasi Sekarang</a>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
@@ -115,7 +174,15 @@
                     </div>
                     <h3>Hybrid</h3>
                     <p>Kombinasi on-grid dan off-grid dengan backup daya saat pemadaman.</p>
-                    <a href="#contact" class="btn-small">Konsultasi Sekarang</a>
+                    <a href="https://wa.me/6287837128688?text=Saya%20tertarik%20dengan%20layanan%20Hybrid%20Ufuk%20Hijau" class="btn-small" target="_blank">Konsultasi Sekarang</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-car-battery"></i>
+                    </div>
+                    <h3>Sistem Penyimpanan Energi</h3>
+                    <p>Solusi penyimpanan energi canggih untuk memaksimalkan penggunaan energi surya dan mengurangi ketergantungan pada grid.</p>
+                    <a href="https://wa.me/6287837128688?text=Saya%20tertarik%20dengan%20layanan%20Sistem%20Penyimpanan%20Energi%20Ufuk%20Hijau" class="btn-small" target="_blank">Konsultasi Sekarang</a>
                 </div>
             </div>
         </div>
@@ -123,81 +190,118 @@
 
     <!-- Portfolio Section -->
     <section id="portfolio" class="portfolio-section">
-    <div class="container">
-        <h2>Portofolio Kami</h2>
-        <div class="portfolio-grid">
-            <!-- Item 1 -->
-            <div class="portfolio-item">
-                <img src="images/portfolio1.jpg" alt="Proyek PLTS Rumah Tinggal" loading="lazy">
-                <div class="portfolio-info">
-                    <h3>PLTS Rumah Tinggal</h3>
-                    <p>Kapasitas 5 kWp - Surakarta</p>
+        <div class="container">
+            <h2>Portofolio Kami</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <img src="images/portfolio1.jpg" alt="Proyek PLTS Rumah Tinggal" loading="lazy">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>PLTS Rumah Tinggal</h3>
+                        <p>Kapasitas 5 kWp - Surakarta</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <img src="images/portfolio2.jpg" alt="Proyek PLTS Industri" loading="lazy">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>PLTS Industri</h3>
+                        <p>Kapasitas 50 kWp - Semarang</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <img src="images/portfolio3.jpg" alt="Proyek PLTS Komersil" loading="lazy">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>PLTS Komersil</h3>
+                        <p>Kapasitas 100 kWp - Semarang</p>
+                    </div>
                 </div>
             </div>
-            
-            <!-- Item 2 -->
-            <div class="portfolio-item">
-                <img src="images/portfolio2.jpg" alt="Proyek PLTS Industri" loading="lazy">
-                <div class="portfolio-info">
-                    <h3>PLTS Industri</h3>
-                    <p>Kapasitas 50 kWp - Semarang</p>
-                </div>
-            </div>
+        </div>
+    </section>
 
-            <!-- Item 3 -->
-            <div class="portfolio-item">
-                <img src="images/portfolio3.jpg" alt="Proyek PLTS Komersil" loading="lazy">
-                <div class="portfolio-info">
-                    <h3>PLTS Komersil</h3>
-                    <p>Kapasitas 100 kWp - Semarang</p>
-                </div>
-            </div>
-            
     <!-- Contact Section -->
     <section id="contact" class="contact-section">
         <div class="container">
             <h2>Hubungi Kami</h2>
             <div class="contact-grid">
+                <!-- Left Column - Contact Info -->
                 <div class="contact-info">
-                    <h3>Kantor Kami</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Jl. Puniodewo No. 53, Cemani, Grogol, Sukoharjo, Jawa Tengah 57552</p>
-                    <p><i class="fas fa-phone"></i> +62 878-372-8688</p>
-                    <p><i class="fas fa-envelope"></i> info@ufukhijau.com</p>
-                    
-                    <div class="social-media">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    <div class="contact-info-inner">
+                        <h3>Kantor Kami</h3>
+                        <div class="contact-detail">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>Jl. Puntodewo No. 53, Cemani, Grogol, Sukoharjo, Jawa Tengah 57552</p>
+                        </div>
+                        <div class="contact-detail">
+                            <i class="fas fa-phone"></i>
+                            <p>+62 878-372-8688</p>
+                        </div>
+                        <div class="contact-detail">
+                            <i class="fas fa-envelope"></i>
+                            <p>difa@ufukhijau.com</p>
+                        </div>
+                        
+                        <h3 class="social-title">Media Sosial</h3>
+                        <div class="social-media">
+                            <a href="https://www.facebook.com/share/14HTH4id7ee/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/ufukhijau/?utm_source=qr&igsh=cDNwNHRvdmZybGJw" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="https://x.com/UfukHijau?t=YI3oCC4x2T677g9DerJIfw&s=09" aria-label="X"><i class="fab fa-twitter"></i></a>
+                        </div>
                     </div>
                 </div>
+                
+                <!-- Right Column - Contact Form -->
                 <div class="contact-form">
-                    <form id="contactForm">
+                    <form id="contactForm" action="https://formspree.io/f/mzzvgyog" method="POST">
                         <div class="form-group">
-                            <input type="text" id="name" placeholder="Nama Anda" required>
+                            <input type="text" name="name" placeholder="Nama Lengkap" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" id="email" placeholder="Email" required>
+                            <input type="email" name="email" placeholder="Email" required>
                         </div>
                         <div class="form-group">
-                            <input type="tel" id="phone" placeholder="Nomor Telepon">
+                            <input type="tel" name="phone" placeholder="Nomor WhatsApp/Telepon" required>
                         </div>
                         <div class="form-group">
-                            <textarea id="message" placeholder="Pesan Anda" rows="4" required></textarea>
+                            <select name="service" required>
+                                <option value="" disabled selected>Pilih Layanan</option>
+                                <option value="on-grid">Grid-Tie (On-Grid)</option>
+                                <option value="off-grid">Off-Grid</option>
+                                <option value="hybrid">Hybrid</option>
+                                <option value="storage">Sistem Penyimpanan Energi</option>
+                                <option value="other">Lainnya</option>
+                            </select>
                         </div>
-                        <button type="submit" class="btn">Kirim Pesan <i class="fas fa-paper-plane"></i></button>
+                        <div class="form-group">
+                            <textarea name="message" placeholder="Deskripsi kebutuhan proyek Anda..." rows="4" required></textarea>
+                        </div>
+                        <input type="hidden" name="_subject" value="Permintaan Konsultasi dari Website">
+                        <input type="hidden" name="_replyto">
+                        <button type="submit" class="btn">
+                            <i class="fas fa-paper-plane"></i> Kirim Permintaan
+                        </button>
                     </form>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/6287837128688" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i> Konsultasi
+    </a>
+
     <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <h3>Ufuk Hijau Energi</h3>
+                    <img src="images/logo-ufukhijau-white.png" alt="Ufuk Hijau Energi" width="200">
                     <p>Energi Terbarukan untuk Masa Depan Berkelanjutan</p>
                 </div>
                 <div class="footer-links">
@@ -216,12 +320,30 @@
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2023 PT Ufuk Hijau Energi. All Rights Reserved.</p>
+                <p>&copy; 2025 PT Ufuk Hijau Energi. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/lightgallery.min.js"></script>
     <script src="js/main.js"></script>
+    
+    <script>
+        // Font Awesome Loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            document.body.classList.add('fa-loaded');
+            
+            // Auto-set reply-to email
+            document.querySelector('input[name="email"]')?.addEventListener('input', function() {
+                document.querySelector('input[name="_replyto"]').value = this.value;
+            });
+            
+            // WhatsApp click tracking
+            document.querySelectorAll('[href*="whatsapp"]').forEach(link => {
+                link.addEventListener('click', function() {
+                    console.log('WhatsApp link clicked:', this.href);
+                });
+            });
+        });
+    </script>
 </body>
 </html>
