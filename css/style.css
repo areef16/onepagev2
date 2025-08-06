@@ -398,7 +398,7 @@ header.scrolled {
 }
 
 .mission {
-    border-left: 4px solid var(--secondary);
+    border-left: 4px solid var(--accent);
 }
 
 .icon-box {
@@ -416,7 +416,7 @@ header.scrolled {
 }
 
 .mission .icon-box {
-    background: rgba(52, 152, 219, 0.1);
+    background: rgba(243, 156, 18, 0.1);
 }
 
 .icon-box i {
@@ -428,7 +428,7 @@ header.scrolled {
 }
 
 .mission .icon-box i {
-    color: var(--secondary);
+    color: var(--accent);
 }
 
 .vision h3, .mission h3 {
