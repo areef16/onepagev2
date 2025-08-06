@@ -601,7 +601,7 @@ header.scrolled {
 }
 
 .contact-detail i {
-    color: #4CAF50;
+    color: var(--primary);
     margin-right: 1rem;
     margin-top: 3px;
     font-size: 1.1rem;
